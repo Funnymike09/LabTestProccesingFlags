@@ -1,5 +1,5 @@
 
-Flag h1 = new Flag(20, 12, 0, 0); 
+Flag h1 = new Flag(790, 12, 0, 0); 
 Flag h2 = new Flag(70, 790, 1, 20); 
  
 void setup() 
@@ -25,11 +25,19 @@ class Flag{
   void update() { 
     xpos = xpos + 0.3;
     
+    
     if (xpos > 800) { 
       xpos = 0; 
+      //warping if reaches the edge
     } 
+    if (ypos > 800) {
+      ypos = 0;
+      //warping
+    }
+    //test rect for effects
     rect(xpos, ypos, wide, lenght); 
     {
+      //da flag (didnt do loop cus got to do want to make working class first) 
   noStroke();
 fill(255,0,0);
 rect(50,200,400,33);
