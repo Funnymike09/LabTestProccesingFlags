@@ -1,17 +1,17 @@
 
-Flag h1 = new Flag(90, 12, 0, 0); 
-Flag h2 = new Flag(70, 790, 1, 20); 
+Flag f1 = new Flag(90, 12, 0, 0); 
+Flag f2 = new Flag(70, 790, 1, 20); 
  
 void setup() 
 {
   size(800, 800);
-  frameRate(30);
+  frameRate(24);
 }
 
 void draw() { 
   background(204);
-  h1.update(); 
-  h2.update();  
+  f1.update(); 
+  f2.update();  
 } 
  
 class Flag{ 
@@ -37,7 +37,7 @@ class Flag{
       ypos = 0;
       //warping
     }
-  if (lenght > 50) {
+  if (lenght > 30) {
     a = -1;
   }
   if (lenght < 10 ) {
@@ -49,13 +49,28 @@ class Flag{
    if (wide < 10) {
     b = 1;
   }
-    //exaplerect for effects
-    rect(xpos, ypos, wide, lenght); 
+  //^^messy but the only way i could get it to work sin waves didn't work
+    //example rect for effects
+    rect(xpos, ypos, wide, lenght);
+    noStroke();
+fill(255,0,0);
+rect(xpos, ypos, wide, lenght);
+fill(255,255,0);
+rect(xpos, ypos, wide, lenght);
+fill(0,255,0);
+rect(xpos, ypos, wide, lenght);
+fill(0,255,255);
+rect(xpos, ypos, wide, lenght);
+fill(0,0,255);
+rect(xpos, ypos, wide, lenght);
+fill(255,0,255);
+rect(xpos, ypos, wide, lenght);
+// copy of the flag to get to move
     {
       //da flag (didnt do loop cus got to do want to make working class first) 
   noStroke();
 fill(255,0,0);
-rect(50,200,400,33);
+rect(xpos, ypos, wide, lenght);
 fill(255,255,0);
 rect(50,233,400,33);
 fill(0,255,0);
