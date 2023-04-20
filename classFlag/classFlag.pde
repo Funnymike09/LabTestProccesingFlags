@@ -1,6 +1,6 @@
 
-Flag h1 = new Flag(20, 12, 20, 2); 
-Flag h2 = new Flag(50, 2, 40, 4); 
+Flag h1 = new Flag(20, 12, 0, 0); 
+Flag h2 = new Flag(70, 790, 1, 20); 
  
 void setup() 
 {
@@ -23,12 +23,12 @@ class Flag{
     lenght = l;
   } 
   void update() { 
-    ypos++; 
-    wide++;
-    if (ypos > height) { 
-      ypos = 0; 
+    xpos = xpos + 0.3;
+    
+    if (xpos > 800) { 
+      xpos = 0; 
     } 
-    rect(xpos, ypos, width, lenght); 
+    rect(xpos, ypos, wide, lenght); 
     {
   noStroke();
 fill(255,0,0);
