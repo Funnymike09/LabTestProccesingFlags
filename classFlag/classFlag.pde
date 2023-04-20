@@ -1,10 +1,10 @@
-// Declare and construct two objects (h1, h2) from the class HLine 
-HLine h1 = new HLine(20, 2.0, 20, 20); 
-HLine h2 = new HLine(50, 2.5, 40, 40); 
+
+Flag h1 = new Flag(20, 12, 20, 2); 
+Flag h2 = new Flag(50, 2, 40, 4); 
  
 void setup() 
 {
-  size(200, 200);
+  size(800, 800);
   frameRate(30);
 }
 
@@ -14,19 +14,50 @@ void draw() {
   h2.update();  
 } 
  
-class HLine { 
-  float ypos, speed, xpos, lenght; 
-  HLine (float y, float s, float x, float l) {  
+class Flag{ 
+  float ypos, wide, xpos, lenght; 
+  Flag (float y, float x,float w, float l) {  
     ypos = y; 
-    speed = s;
+    wide = w;
     xpos = x;
     lenght = l;
   } 
   void update() { 
-    ypos += speed; 
+    ypos++; 
+    wide++;
     if (ypos > height) { 
       ypos = 0; 
     } 
     rect(xpos, ypos, width, lenght); 
+    {
+  noStroke();
+fill(255,0,0);
+rect(50,200,400,33);
+fill(255,255,0);
+rect(50,233,400,33);
+fill(0,255,0);
+rect(50,266,400,33);
+fill(0,255,255);
+rect(50,300,400,33);
+fill(0,0,255);
+rect(50,333,400,33);
+fill(255,0,255);
+rect(50,366,400,33);
+
+noStroke();
+fill(0,0,0);
+triangle(50,200,50,400,300,300);
+fill(150,160,0);
+triangle(50,215,50,380,270,300);
+fill(255,180,200);
+triangle(50,230,50,370,248,300);
+fill(255,255,100);
+triangle(50,245,50,355,210,300);
+
+stroke(150,50,220);
+strokeWeight(5);
+noFill();
+circle(100,300,50);
+}
   } 
 } 
