@@ -1,5 +1,5 @@
 
-Flag h1 = new Flag(790, 12, 0, 0); 
+Flag h1 = new Flag(90, 12, 0, 0); 
 Flag h2 = new Flag(70, 790, 1, 20); 
  
 void setup() 
@@ -15,7 +15,8 @@ void draw() {
 } 
  
 class Flag{ 
-  float ypos, wide, xpos, lenght; 
+  float ypos, wide, xpos, lenght;
+  float a = 1;
   Flag (float y, float x,float w, float l) {  
     ypos = y; 
     wide = w;
@@ -24,7 +25,7 @@ class Flag{
   } 
   void update() { 
     xpos = xpos + 0.3;
-    
+    lenght = lenght + a;
     
     if (xpos > 800) { 
       xpos = 0; 
@@ -34,6 +35,12 @@ class Flag{
       ypos = 0;
       //warping
     }
+  if (lenght > 50) {
+    a = -1;
+  }
+  if (lenght < 10 ) {
+    a = 1;
+  }
     //test rect for effects
     rect(xpos, ypos, wide, lenght); 
     {
