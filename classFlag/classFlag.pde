@@ -17,6 +17,7 @@ void draw() {
 class Flag{ 
   float ypos, wide, xpos, lenght;
   float a = 1;
+  float b = 1;
   Flag (float y, float x,float w, float l) {  
     ypos = y; 
     wide = w;
@@ -26,6 +27,7 @@ class Flag{
   void update() { 
     xpos = xpos + 0.3;
     lenght = lenght + a;
+    wide = wide + b;
     
     if (xpos > 800) { 
       xpos = 0; 
@@ -41,7 +43,13 @@ class Flag{
   if (lenght < 10 ) {
     a = 1;
   }
-    //test rect for effects
+  if (wide > 60) {
+    b = -1;
+  }
+   if (wide < 10) {
+    b = 1;
+  }
+    //exaplerect for effects
     rect(xpos, ypos, wide, lenght); 
     {
       //da flag (didnt do loop cus got to do want to make working class first) 
